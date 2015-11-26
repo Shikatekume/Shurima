@@ -1,4 +1,5 @@
 void quicksorthybrid(int table[], int first, int last) zmiana 1
+nie bo moja
 {
 	if (last-first>9) 
 	{
