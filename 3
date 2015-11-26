@@ -1,0 +1,46 @@
+program dobry;
+var tekst: String;
+
+function samogloska(znak: Char): Boolean;
+begin
+ samogloska := (znak = 'a') or (znak = 'e') or (znak = 'i') or (znak = 'o') or
+               (znak = 'u') or (znak = 'y');
+end;
+
+{Tu mamy do czynienia z czyms nowym - mozemy porownywac ze soba znaki.
+Porownanie zostaje dokonane po kodach ASCII znakow. Korzystamy takze z tego,
+ze kody ASCII miedzy kodem 'a' a kodem 'z' maja tylko male litery.}
+function czy_mala(znak: Char): Boolean;
+begin
+ czy_mala := (znak >= 'a') and (znak <= 'z');
+end;
+
+function dobry(t: String): Boolean;
+var i, licznik: Longint;
+male: Boolean;
+begin
+ male := true;
+ for i := 1 to Length(t) do
+  if not czy_mala(t[i]) then
+   male := false;
+ if not male then
+  dobry := false
+ else
+ begin
+  for i := 1 to Length(t) do
+   if samogloska(t[i]) then
+    licznik := licznik + 1;
+  if 2 * licznik >= Length(t) then {*}
+   dobry := true
+  else
+   dobry := false;
+ end;
+end;
+
+begin
+ Readln(tekst);
+ if dobry(tekst) then
+  Writeln('Dobry')
+ else
+  Writeln('Niedobry');
+end.

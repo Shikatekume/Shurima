@@ -1,0 +1,33 @@
+type
+ tablica_real = array[1..1024 * 1024] of Real;
+ tablica_longint = array[1..1024 * 1024] of Longint;
+
+var tr: ^tablica_real;
+  tl: ^tablica_longint;
+  typ, ile, i: Longint;
+  suml: Longint;
+  sumd: Real;
+
+begin
+ Write('Jaki typ zmiennych wczytac? (1 - Real, 2 - Longint): ');
+ Readln(typ);
+ Write('Ile zmiennych wczytac? (1 - 1 000 000): ');
+ Readln(ile);
+ if typ = 1 then begin
+  New(tr);
+  for i := 1 to ile do
+   Read(tr^[i]);
+  for i := 1 to ile do
+   sumd := sumd + tr^[i];
+  Writeln('Suma: ', sumd);
+ end
+ else
+ begin
+  New(tl);
+  for i := 1 to ile do
+   Read(tl^[i]);
+  for i := 1 to ile do
+   suml := suml + tl^[i];
+  Writeln('Suma: ', suml);
+ end;
+end.

@@ -1,0 +1,76 @@
+
+
+PROGRAM Figury; {IF}
+
+ USES Crt;
+
+ VAR
+ a, b, h, r, pole, objetosc : REAL;
+ nrw : INTEGER;
+
+ BEGIN {main - Figury}
+ ClrScr;
+ Writeln;
+ Writeln('Program umoľliwia obliczenie:');
+ Writeln(' 1 - pola prostokata');
+ Writeln(' 2 - pola trapezu');
+ Writeln(' 3 - objetosc kuli');
+ Writeln(' 4 - objetosc stozka');
+ Writeln;
+ Readln(nrw);
+
+ IF nrw = 1 THEN {prostokat}
+BEGIN
+ Writeln('Obliczanie pola prostokata:');
+ Writeln('Podaj dlugosci bokow');
+ Readln(a);
+ Readln(b);
+ pole:=a*b;
+ Writeln('Pole prostokata o bokach');
+ Writeln('a=',a:6:3, ' b=',b:6:3);
+ Writeln('wynosi ', pole:8:3);
+END;
+
+ IF nrw = 2 THEN {trapez}
+BEGIN
+ Writeln('Obliczanie pola trapezu:');
+ Writeln('Podaj dlugosc dolnej podstawy');
+ Readln(a);
+ Writeln('Podaj dlugosc gornej podstawy');
+ Readln(b);
+ Writeln('Podaj wysokosc');
+ Readln(h);
+ pole:=0.5*(a+b)*h;
+ Writeln('Pole trapezu o podstawach');
+ Writeln('a=',a:6:3, ' b=',b:6:3);
+ Writeln('i wysokosci h=',h:6:3);
+ Writeln('wynosi ',pole:6:3);
+END;
+
+ IF nrw = 3 THEN {kula}
+BEGIN
+ Writeln('Obliczanie objetosci kuli:');
+ Writeln('Podaj promien kuli');
+ Readln(r);
+ objetosc:=(4/3)*Pi*r*r*r;
+ Writeln('Objetosc kuli o promieniu');
+ Writeln('r=',r:6:3);
+ Writeln('Pole wynosi ',objetosc:6:3);
+END;
+
+ IF nrw = 4 THEN {stozek}
+BEGIN
+ Writeln('Obliczanie objetosci stozka');
+ Writeln('Podaj promien podstawy');
+ Readln(r);
+ Writeln('Podaj wysokosc stozka');
+ Readln(h);
+ objetosc:=(1/3)*Pi*r*r*h;
+ Writeln('Objetosc stozka o promieniu podstawy');
+ Writeln('r=', r:6:3);
+ Writeln('wynosi ', objetosc:6:3);
+END;
+
+ REPEAT UNTIL KeyPressed;
+
+ END.{main - Figury}
