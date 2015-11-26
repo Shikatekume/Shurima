@@ -1,4 +1,4 @@
-void quicksorthybrid(int table[], int first, int last)
+void quicksorthybrid(int table[], int first, int last) zmiana 1
 {
 	if (last-first>9) 
 	{
