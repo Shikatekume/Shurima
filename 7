@@ -1,0 +1,30 @@
+// Dopisywanie na koniec pliku
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+        FILE *fp;
+        int liczba,i,ilosc;
+        fp=fopen("plik.dat","a+b");
+        printf("\n Podaj liczbe do zapisania w pliku: ");
+        scanf("%d",&liczba);
+        fwrite(&liczba,sizeof(int),1,fp);
+        fclose(fp);
+        printf("\n Zapisane dotychczas liczby: ");
+        fp=fopen("plik.dat","r+b");
+        fseek(fp,0,SEEK_END);
+        ilosc=ftell(fp)/sizeof(int);
+        fseek(fp,0,SEEK_SET);
+        printf("\n Podaj liczbe do zapisania w pliku: ");
+        scanf("%d",&liczba);
+        fwrite(&liczba,sizeof(int),1,fp);
+        fclose(fp);
+        for(i=0;i<ilosc;i++)
+        {
+                fread(&liczba,sizeof(int),1,fp);
+                printf("\n %d",liczba);
+        }
+        fclose(fp);
+        getch();
+        return 0;
+}
