@@ -1,6 +1,5 @@
 void quicksorthybrid(int table[], int first, int last) zmiana 1
-zmiana moja hehehe
-{
+Konflikt rozwiazany{
 	if (last-first>9) 
 	{
 		int i = first;
