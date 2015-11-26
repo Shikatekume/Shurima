@@ -1,0 +1,47 @@
+PROGRAM Rown_kwadr1; {Plik P05.pas}
+
+ USES Crt;
+
+ VAR  a, b, c, x1, x2, delta : Real;
+
+BEGIN {main}
+ClrScr;
+GoToXY(1,5);
+Writeln('Program oblicza pierwiastki');
+Writeln('rownania kwadratowego dla dowolnych a, b, c');
+Writeln('Podaj a:');
+Readln(a);
+IF a = 0 THEN
+Writeln('Niedopuszczlna wartosc wspolczynnika a. Koniec programu')
+ELSE
+BEGIN
+Writeln('Podaj b:');
+Readln(b);
+Writeln('Podaj c:');
+Readln(c);
+Writeln;
+Writeln('dla: a =',a:6:3);
+Writeln(' b =',b:6:3);
+Writeln(' c =',c:6:3);
+delta:=b*b-4*a*c;
+IF delta<0 THEN
+Writeln('Brak pierwiastkow rzeczywistych')
+ELSE
+IF delta=0 THEN
+BEGIN
+x1:=-b/(2*a);
+Writeln;
+Writeln('trojmian ma jeden pierwiastek podwojny x= ',x1:6:3);
+END
+ELSE
+BEGIN
+x1:=(-b-Sqrt(delta))/(2*a);
+x2:=(-b+Sqrt(delta))/(2*a);
+Writeln;
+Writeln('Trojmian ma dwa pierwiastki');
+Writeln('x1 =',x1:6:3);
+Writeln('x2 =',x2:6:3);
+END;
+END;
+REPEAT UNTIL Keypressed;
+END. {main}
