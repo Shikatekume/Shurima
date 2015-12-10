@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Wsta³em dzisiaj rano niewyspany,
+=======
+kolosy z unixów s¹
+>>>>>>> 29c1d30b2dff7dce2beb59dd2a4d484925cff8a9
