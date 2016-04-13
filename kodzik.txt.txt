@@ -4,7 +4,7 @@ class Emulator:
         print u"Ten Emulator wywo³ano jako funkcjê z parametrem x =", x
 
     def __getitem__(self, key):
-        return str(key) + "-ty element w kontenerze klasy Emulator"
+        return str(key) + "-ty element w kontddenerze klasy Emulator"
 
 e = Emulator()
 e('abc')
