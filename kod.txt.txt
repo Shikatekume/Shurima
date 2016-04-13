@@ -1,0 +1,52 @@
+class Emulator:
+
+    def __call__(self, x):
+        print u"Ten Emulator wywo³ano jako funkcjê z parametrem x =", x
+
+    def __getitem__(self, key):
+        return str(key) + "-ty element w kontddenerze klasy Emulator"
+
+e = Emulator()
+e('abc')
+e(123)
+print e['def']
+print e[456]'
+class Emulator:
+
+    def __call__(self, x):
+        print u"Ten Emulator wywo³ano jako funkcjê z parametrem x =", x
+
+    def __getitem__(self, key):
+        return str(key) + "-ty element w kontenerze klasy Emulator"
+d
+e = Emulator()
+e('abc')
+e(123)
+print e['def']
+print e[456]
+class Emulator:
+
+    def __call__(self, x):
+        print u"Ten Emulator wywo³ano jako funkcjê z parametrem x =", x
+
+    def __getitem__(self, key):
+        return str(key) + "-ty element w kontenerze klasy Emulator"
+
+e = Emulator()
+e('abc')
+e(123)
+print e['def']
+print e[456]
+class Emulator:
+
+    def __call__(self, x):
+        print u"Ten Emulator wywo³ano jako funkcjê z parametrem x =", x
+
+    def __getitem__(self, key):
+        return str(key) + "-ty element w kontenerze klasy Emulator"
+
+e = Emulator()
+e('abc')
+e(123)
+print e['def']
+print e[456]
