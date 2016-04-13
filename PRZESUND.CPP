@@ -1,7 +1,7 @@
 //Program deszyfrujacy tekst z pliku za pomoca algorytmu podstawieniowego monoalfabetycznego o wybranym przesunieciu
 //Program pobrano ze strony www.algorytm.org
 //Opracowal Krzysztof Mackowiak
-
+//committed by KarolHagrid
 #include<stdio.h>
 #include<iostream.h>
 #include <math.h>
@@ -67,7 +67,7 @@ if((wy=fopen(plik_jawny,"wb"))!=NULL)  //otwieranie pliku 2. do zapisu
 			znak+=48;
                         putc(znak,wy);
                      }
-        
+
 	}
 fclose(wy);
  }

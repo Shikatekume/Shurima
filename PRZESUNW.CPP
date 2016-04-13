@@ -1,7 +1,7 @@
 //Program deszyfrujacy tekst z pliku za pomoca algorytmu podstawieniowego monoalfabetycznego o przesunieciu od 1 do 25
 //Program pobrano ze strony www.algorytm.org
 //Opracowal Krzysztof Mackowiak
-
+//KAROLHAGRID
 #include<stdio.h>
 #include<iostream.h>
 #include <math.h>
@@ -64,7 +64,7 @@ if((we=fopen(plik_zaszyfrowany,"rb"))!=NULL)    //otwieranie pliku  do odczytu
 			znak+=48;
                         putc(znak,wy);
                      }
-        
+
 	}
 znak=*"endl";
 putc(znak,wy);
