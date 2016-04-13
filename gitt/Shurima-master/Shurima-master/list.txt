@@ -1,0 +1,48 @@
+void ListInit(List* list)
+{
+  if(!list)    /* Taka kontrola bledow */
+    return;
+ 
+  list->Size=0;       /* 0 elementow na poczatku */
+  list->First=NULL; /* Lista pusta - nie ma poczatku */
+}
+
+int ListInsert(List* list,int value)
+{
+  Node* Tmp=NULL; /* Do przechodzenia po liscie */
+  Node* End=NULL;  /* Do trzymania konca listy */
+  Node* New=NULL; /* Do trzymania wskaznika na nowy wezel */
+
+  if(!list)          /* Nie ma listy - nie ma gdzie wstawiac - zwroc blad */
+    return -1;
+
+  Tmp=End=list->First;
+  while(Tmp)
+  {
+    if(Tmp->Value==value) /* Konflikt wartosci */
+      break;
+    End=Tmp;                 /* Zapamietaj wczesniejszy wezel - do wtawiania na koniec */
+    Tmp=Tmp->Next;       /* Przejdz do nastepnego wezla */
+  }
+
+  if(Tmp)    /* Jesli nie przeszlismy calej listy - znaleziono jakis element o danym kluczu */
+    return -2; /* Blad - klucz istnieje */
+
+  New=(Node*)malloc(sizeof(Node)); /* Stworz dynamicznie nowy wezel */
+  if(!New)
+    return -3; /* Blad allokacji pamieci */
+
+  New->Next=NULL;  /* Uzueplnij dane wezla */
+  New->Value=value;
+  ++(list->Size);      /* Zwieksz ilosc elementow w liscie */
+
+  if(!End) /* Nie ma konca - wstaw na pierwszy element listy */
+  {
+    list->First=New;
+    return 0;
+  }
+ 
+  /* Wstaw na koniec */
+  End->Next=New;
+  return 0;
+}

